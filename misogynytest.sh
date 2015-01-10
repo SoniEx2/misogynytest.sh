@@ -20,4 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# TODO...
+# generate random number
+X=$(head -c1 /dev/urandom | od -An -t d);
+
+# generate output
+if [ $X -lt 128 ]
+then
+  echo "$1 is misogynistic"
+else
+  echo "$1 is not misogynistic"
+fi
